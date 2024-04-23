@@ -37,7 +37,7 @@
         <main class="l-main">
         <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title">Hi,I'am<br><span class="home__title-color">Rafby Mokodompit</span><br> 220211060371</h1>
+                    <h1 class="home__title" >Hi,I'am<br><span class="home__title-color" id="typewriter"></span><br> 220211060371</h1>
 
                    
                 </div>
@@ -52,72 +52,33 @@
 
             <section class="about section " id="about">
                 <h2 class="section-title">Artikel</h2>
+                <div id="blogContainer">
 
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="assets/img/Artikel1.jpeg" alt="">
-                    </div>
-                    
-                    <div>
-                        <h2 class="about__subtitle">Teknologi Ramah Lingkungan</h2>
-                        <p class="about__text">Artikel ini menjelaskan tentang perkembangan teknologi yang ramah lingkungan dan berkelanjutan, seperti energi
-                        terbarukan, kendaraan listrik, dan penggunaan material daur ulang dalam industri.</p>  
-                        <button class="contact__button button">Selengkapnya</button>
-                    </div>                                   
                 </div>
-         
-                
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="assets/img/Artikel2.jpeg" alt="">
-                    </div>
-                
-                    <div>
-                        <h2 class="about__subtitle">Wisata Alam Tersembunyi</h2>
-                        <p class="about__text">Artikel ini mengungkapkan keindahan dan pesona tempat-tempat wisata alam yang jarang dikunjungi, memberikan pembaca
-                        inspirasi untuk menjelajahi alam dan lingkungan yang belum terjamah oleh banyak orang.</p>
-                        <button class="contact__button button">Selengkapnya</button>
-                    </div>
-                </div>
-           
-                
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="assets/img/Artikel3.jpg" alt="">
-                    </div>
-                
-                    <div>
-                        <h2 class="about__subtitle">Manfaat Meditasi Harian</h2>
-                        <p class="about__text">Artikel ini membahas manfaat meditasi dalam kehidupan sehari-hari, seperti mengurangi stres, meningkatkan fokus, dan
-                        meningkatkan kesejahteraan mental dan emosional.</p>
-                        <button class="contact__button button">Selengkapnya</button>
-                    </div>
-                </div>
+
+               
+                <div style="text-align:center; padding-left: 30%; padding-right: 30%;" class="about section ">
+        
+        
+                    <a href="#about" class="contact__button button" onclick="loadBlog()" id="loadBlogButton">Tekan Untuk Melihat Artikel</a>
+                    <a href="#about" class="contact__button button" onclick="previousBlog()" id="previousBlogButton" style="display: none">Sebelumnya</a>
+                    <a href="#about" class="contact__button button" onclick="nextBlog()" id="nextBlogButton" style="display: none;">next</a>
+                  </div>
             </section>
 
             <section class="work section" id="galery">
                 <h2 class="section-title">Gallery</h2>
 
-                <div class="work__container bd-grid">
-                    <a href="" class="work__img">
-                        <img src="assets/img/Gambar1.jpeg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/Gambar2.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/Gambar3.jpeg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/Gambar4.jpeg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/Gambar5.jpeg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/Gambar6.jpeg" alt="">
-                    </a>
+                <div class="work__container bd-grid" id="galleryContainer">
+                    
                 </div>
+                <div style="text-align:center; padding-left: 30%; padding-right: 30%;" class="about section ">
+        
+        
+                    <a href="#galery" class="contact__button button" onclick="loadGallery()" id="loadGalleryButton">Tekan Untuk Melihat Gallery</a>
+                    <a href="#galery" class="contact__button button" onclick="previousGallery()" id="previousGalleryButton" style="display: none">Sebelumnya</a>
+                    <a href="#galery" class="contact__button button" onclick="nextGallery()" id="nextGalleryButton" style="display: none;">next</a>
+                  </div>
             </section>
 
 
@@ -138,6 +99,19 @@
         </footer>
 
 
+        <script src="script.js"></script>
+        <script>var text = "Rafby Mokodompit";
+            var speed = 100; // milliseconds per character
+            
+            function typeWriter() {
+                if (text.length > 0) {
+                    document.getElementById("typewriter").innerHTML += text.charAt(0);
+                    text = text.substring(1);
+                    setTimeout(typeWriter, speed);
+                }
+            }
+            
+            typeWriter();</script>
 
     </body>
 </html>
